@@ -2,7 +2,7 @@
 'https://plantuml.com/class-diagram
 
 class ComplexNumber{
-    -double realPart
+    -double realPartt
     -double imaginaryPart
     +ComplexNumber(double real, double imag)
     +ComplexNumber(double real)
