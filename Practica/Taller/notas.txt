@@ -1,9 +1,0 @@
-
-Herencia ==> ... es un ... (<|--)
-Composición ==> ... tiene un ... (*--)
-
-Variable ==> siempre privada
-Método ==> puede ser protegido para que los hijos puedan acceder y reescribir
-
-Ningún método abstracto puede ser privado ya que los hijos lo deben utilizar
-
