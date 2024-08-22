@@ -1,4 +1,4 @@
-package Taller1.ej2;
+package Taller.Taller1.ej2;
 
 public class Counter {
 

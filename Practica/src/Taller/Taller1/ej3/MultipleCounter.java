@@ -1,6 +1,5 @@
-package Taller1.ej3;
-import Taller1.ej2.Counter;
-
+package Taller.Taller1.ej3;
+import Taller.Taller1.ej2.Counter;
 public class MultipleCounter extends Counter {
 
     private int times;

@@ -1,6 +1,6 @@
-package Taller1.ej2;
+package Taller.Taller1.ej2;
 
-import Taller1.ej3.MultipleCounter;
+import Taller.Taller1.ej3.MultipleCounter;
 
 public class counterTest {
     public static void main(String[] args) {

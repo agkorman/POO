@@ -59,9 +59,12 @@ String html =   """
 Toma en cuenta los espacios en blanco a la izquierda, útil </br>
 para hacer strings con formate html, por ejemplo.
 
-### Excepsiones
+### Excepciones
 Presentación 2, diapos 38-40
 
+si una excepción extiende a:</br>
+Exceptions ==> Checked Exception</br>
+RuntimeException ==> Unchecked Exception
 ````
 // catch
 public Date(int day...) throws DataAccessException {
@@ -80,3 +83,7 @@ public class DateException extends Exceptions {
     }
 }
 ````
+Si el try {} abarca todos los llamados a un método, la excepsión es checked. Pero en</br>
+el caso de que no lo haga, es una unchecked exception.
+
+
