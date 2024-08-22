@@ -45,3 +45,38 @@ static int sum(int... values) {
 ````
 La notacion (int... values) recibe una serie de parámetros </br>
 y la convierte en un array.
+
+### TextBlocks
+````
+String html =   """
+                <html>
+                    <body>
+                        <p>Hello, Worls<\p>
+                    </body>
+                </html>
+                """;
+````
+Toma en cuenta los espacios en blanco a la izquierda, útil </br>
+para hacer strings con formate html, por ejemplo.
+
+### Excepsiones
+Presentación 2, diapos 38-40
+
+````
+// catch
+public Date(int day...) throws DataAccessException {
+    throws DateException {
+        if (day < 0) {
+             throw new DateException();
+        }
+        this.day = day;
+        this.month = month;
+        this.year = year;
+}
+
+public class DateException extends Exceptions {
+    public DateExceptions() {
+        super("Mal los parámetros de fecha");
+    }
+}
+````
