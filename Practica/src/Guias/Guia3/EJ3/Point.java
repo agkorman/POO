@@ -24,4 +24,10 @@ public class Point {
     public String toString() {
         return "{%g, %g}".formatted(x, y);
     }
+
+    public double distanceTo(Point p) {
+        double xSquared = Math.pow(this.x + p.x, 2);
+        double ySquared = Math.pow(this.y + p.y, 2);
+        return Math.sqrt(xSquared + ySquared);
+    }
 }
