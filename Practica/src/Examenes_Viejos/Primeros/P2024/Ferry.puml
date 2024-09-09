@@ -1,0 +1,23 @@
+@startuml
+
+class Ferry {
+-String name
+-FerryCompany company
++Ferry(String name, FerryCompany company)
++FerryCompany getCompany()
++String toString
+}
+class FerryCompany {
+
+}
+abstract class Pier {
+    -String name
+    -FerryCompany company
+    -int maxDocs
+    +Pier(String name, FerryCompany company, int maxDocks)
+    +dock(Ferry ferry, LocalTime time)
+    +undock(Ferry ferry, LocalTime time)
+}
+class 24hPier {
+}
+@enduml
