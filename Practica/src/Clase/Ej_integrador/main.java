@@ -1,5 +1,6 @@
 package Clase.Ej_integrador;
 
+/*
 public static void main(String[] args) {
    Queue<Integer> queue = new QueueImpl<>();
    queue.enqueue(4);
@@ -11,5 +12,7 @@ public static void main(String[] args) {
        System.out.print(elem + " ");
    }
 }
+
+ */
 
 
