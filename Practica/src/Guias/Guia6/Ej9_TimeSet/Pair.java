@@ -4,7 +4,13 @@ public class Pair implements Comparable<Pair>{
     private int hour, min;
 
     Pair(int hour, int minute) {
+        if (hour < 0 || hour > 24) {
+            throw new IllegalStateException();
+        }
         this.hour = hour;
+        if (min < 0 || min > 60) {
+            throw new IllegalStateException();
+        }
         this.min = min;
     }
     @Override

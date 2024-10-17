@@ -1,4 +1,4 @@
-package Clase;
+package Clase.PartitionableCollection;
 
 import java.util.ArrayList;
 import java.util.function.Predicate;
@@ -18,6 +18,6 @@ public class PartitionableCollection<E> extends ArrayList<E>{
     public PartitionableCollection getRejected(Predicate<E> condition) {
         return getSelected(condition.negate());
     }
-    
+
 
 }
