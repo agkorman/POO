@@ -1,4 +1,5 @@
 
+
 # frozen_string_literal: true
 class Item
   attr_accessor :product, :amount
@@ -6,6 +7,23 @@ class Item
     @product = product
     @amount = amount
   end
+  
+  def ==(other)
+    return false unless other.is_a?(Item)
+    @product == other.product
+  end
+
+  alias_method :eql?, :==
+  
+  def <=>(other)
+    return nil unless other.is_a?(Item)
+    @product <=> other.product
+  end
+
+  def hash
+    [@product, @amount].hash
+  end
+
 
   def to_s
     "#{@product.description}\t#{@amount}  $#{@product.price}"
@@ -20,30 +38,16 @@ class Ticket
   @@id = 1000
 
   def initialize
-    @items = []
+    @items = Set[]
     @id = @@id
     @@id += 1
   end
 
   def add(product, amount)
-    found = false
-    @items.each do |item|
-      if item.product == product
-        item.increment_amount(amount)
-        found = true
-      end
-    end
-    @items << Item.new(product, amount) unless found
+    @items.add(Item.new(product, amount))
   end
 
-  private def increment_amount(amount)
-    @amount += amount
-  end
 
-  def ==(other)
-    return false unless other.is_a?(Item)
-    @product == other.product
-  end
 
   private def total
     @items.map { |item| item.subtotal }.reduce {:+}
@@ -64,10 +68,19 @@ class Product
     @price = price
   end
 
-   def ==(other)
-    return false unless other.is_a?(Product)
-    other.description == @description && other.price == @price
+  def hash
+    [@price, @description].hash
   end
 
+  def <=>(other)
+    return nil unless other.is_a?(Product)
+    [@price, @description] <=> [other.price, other.description]
+  end
+
+  def ==(other)
+    return false unless other.is_a?(Product) && @description.eql?(other.descrption) &&
+      @price.eql?(other.price)
+  end
 end
+
 
