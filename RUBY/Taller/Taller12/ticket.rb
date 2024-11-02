@@ -1,5 +1,4 @@
 
-
 # frozen_string_literal: true
 class Item
   attr_accessor :product, :amount
@@ -17,7 +16,7 @@ class Item
   
   def <=>(other)
     return nil unless other.is_a?(Item)
-    @product <=> other.product
+      @product <=> other.product
   end
 
   def hash
@@ -47,6 +46,7 @@ class Ticket
     @items.add(Item.new(product, amount))
   end
 
+  alias_method :eql?, :==
 
 
   private def total
@@ -62,6 +62,7 @@ end
 
 
 class Product
+  include Comparable
   attr_reader :price, :description
   def initialize(description, price)
     @description = description
@@ -77,8 +78,10 @@ class Product
     [@price, @description] <=> [other.price, other.description]
   end
 
+  alias_method :eql, :==
+
   def ==(other)
-    return false unless other.is_a?(Product) && @description.eql?(other.descrption) &&
+    return false unless other.is_a?(Product) && @description.eql?(other.description) &&
       @price.eql?(other.price)
   end
 end

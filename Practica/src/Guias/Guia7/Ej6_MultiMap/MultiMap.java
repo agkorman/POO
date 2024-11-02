@@ -1,7 +1,6 @@
 package Guias.Guia7.Ej6_MultiMap;
 
 public interface MultiMap<K, V>{
-
     /**
      * Agrega un par key,value al multimapa si el par no existe.
      */
@@ -31,6 +30,5 @@ public interface MultiMap<K, V>{
      * Colección ordenada descendentemente de valores de clave key.
      */
     Iterable<V> get(K key);
-
 }
 
