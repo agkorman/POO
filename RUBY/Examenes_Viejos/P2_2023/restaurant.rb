@@ -2,7 +2,7 @@
 
 require_relative 'section'
 require_relative 'table'
-require 'set/sorted_set'
+require 'sorted_set'
 
 class Restaurant
   def initialize(name)
